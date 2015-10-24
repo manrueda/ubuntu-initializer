@@ -16,7 +16,7 @@ This script configure the system with my preferences, but you can fork it and ch
  * Terminator
  * Aircrack-ng
  * 7Zip
- * ZIP|/UnZIP
+ * ZIP|UnZIP
  * Unrar
  * VLC
  * Android Tools (ADB)
@@ -28,7 +28,7 @@ This script configure the system with my preferences, but you can fork it and ch
  * NVM
  * NodeJS
 * Ubuntu style
- * Theme: [Flatabulous](anmoljagetia/Flatabulous)
+ * Theme: [Flatabulous](https://github.com/anmoljagetia/Flatabulous)
  * Icons: Ultra Flat Icons
  * Show the User Name in the system toolbar
 * NPM global packages
