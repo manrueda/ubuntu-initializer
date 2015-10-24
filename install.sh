@@ -33,6 +33,7 @@ sudo apt-get update
 
 echo "Installing apt applications"
 sudo apt-get -y install git ubuntu-tweak spotify-client terminator aircrack-ng p7zip-full unrar vlc browser-plugin-vlc android-tools-adb android-tools-fastboot virtualbox ultra-flat-icons libappindicator1 libindicator7 zip unzip laptop-mode-tools
+sudo apt-get -y upgrade
 
 echo "Installing flat theme"
 mkdir ~/.themes
@@ -59,7 +60,7 @@ wget --output-document=google-chrome-stable_current_amd64.deb https://dl.google.
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 
-echo "	--> atom.io"
+echo "	--> Atom.io"
 wget --output-document=atom.deb https://atom.io/download/deb
 sudo dpkg -i atom.deb
 
@@ -88,6 +89,10 @@ nvm install stable
 
 echo "Installing NPM global packages"
 npm install -g bower grunt-cli gulp istanbul node-inspector serve tape
+
+echo "Installing Atom.io packages"
+/usr/bin/apm install jade-autocompile minimap travis-ci-status file-icons git-plus minimap-highlight-selected atom-typescript atom-material-ui atom-material-syntax atom-material-syntax-light
+
 
 
 read -p "Do you wish to restart the system?" yn
