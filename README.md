@@ -9,6 +9,8 @@ This script configure the system with my preferences, but you can fork it and ch
  * /junk/logs: Folder for logs
  * ~/dev:  Folder for code, repos, etc...
 * Create Nautilus bookmarks for those folders
+* Add a custom terminal init message with useful info like node version...
+* Change the terminal prompt format
 * Install the followings applications:
  * Git
  * Ubuntu Tweak
