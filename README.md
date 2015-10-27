@@ -29,6 +29,7 @@ This script configure the system with my preferences, but you can fork it and ch
  * Sublime Text 3
  * NVM
  * NodeJS
+ * libgcrypt11 (for spotify)
 * Ubuntu style
  * Theme: [Flatabulous](https://github.com/anmoljagetia/Flatabulous)
  * Icons: Ultra Flat Icons

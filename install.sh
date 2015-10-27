@@ -54,6 +54,12 @@ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh &> /dev/null
 mkdir _temp &> /dev/null
 cd _temp &> /dev/null
 
+echo "	--> libgcrypt11 (for spotify)"
+wget --output-document=libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb https://launchpad.net/ubuntu/+archive/primary/+files/libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb &> /dev/null
+wget --output-document=libgcrypt11_1.5.3-2ubuntu4.2_i386.deb https://launchpad.net/ubuntu/+archive/primary/+files/libgcrypt11_1.5.3-2ubuntu4.2_i386.deb &> /dev/null
+sudo dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_i386.deb &> /dev/null
+sudo dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb &> /dev/null
+
 echo "	--> Google Chrome"
 wget --output-document=google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &> /dev/null
 sudo dpkg -i google-chrome-stable_current_amd64.deb &> /dev/null
