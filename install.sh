@@ -83,7 +83,7 @@ nvm install stable &> /dev/null
 nvm alias default stable &> /dev/null
 
 echo "Installing NPM global packages"
-npm install -g bower grunt-cli gulp istanbul node-inspector serve tape &> /dev/null
+npm install -g bower grunt-cli gulp istanbul node-inspector serve tape upnpserver-cli &> /dev/null
 
 echo "Installing Atom.io packages"
 /usr/bin/apm install jade-autocompile minimap travis-ci-status file-icons git-plus minimap-highlight-selected atom-typescript atom-material-ui atom-material-syntax atom-material-syntax-light &> /dev/null

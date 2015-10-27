@@ -41,6 +41,7 @@ This script configure the system with my preferences, but you can fork it and ch
  * node-inspector
  * serve
  * tape
+ * upnpserver-cli
 * Atom.io packages
  * jade-autocompile
  * minimap
