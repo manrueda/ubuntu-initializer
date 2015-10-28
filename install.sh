@@ -32,7 +32,7 @@ sudo apt-get update &> /dev/null
 
 
 echo "Installing apt applications"
-sudo apt-get -y install git ubuntu-tweak spotify-client terminator aircrack-ng p7zip-full unrar vlc browser-plugin-vlc android-tools-adb android-tools-fastboot virtualbox ultra-flat-icons libappindicator1 libindicator7 zip unzip laptop-mode-tools &> /dev/null
+sudo apt-get -y install git ubuntu-tweak spotify-client terminator aircrack-ng p7zip-full unrar vlc browser-plugin-vlc android-tools-adb android-tools-fastboot virtualbox ultra-flat-icons libappindicator1 libindicator7 zip unzip laptop-mode-tools wine winetricks &> /dev/null
 sudo apt-get -y upgrade &> /dev/null
 
 echo "Installing flat theme"
@@ -56,8 +56,6 @@ cd _temp &> /dev/null
 
 echo "	--> libgcrypt11 (for spotify)"
 wget --output-document=libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb https://launchpad.net/ubuntu/+archive/primary/+files/libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb &> /dev/null
-wget --output-document=libgcrypt11_1.5.3-2ubuntu4.2_i386.deb https://launchpad.net/ubuntu/+archive/primary/+files/libgcrypt11_1.5.3-2ubuntu4.2_i386.deb &> /dev/null
-sudo dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_i386.deb &> /dev/null
 sudo dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb &> /dev/null
 
 echo "	--> Google Chrome"
