@@ -9,11 +9,11 @@ REAL_USER=$(who am i | awk '{print $1}')
 echo "This script will create some custom folders, install a lot of basic applications, etc..."
 
 echo "Creating folders"
-mkdir /junk &> /dev/null
-mkdir /junk/logs &> /dev/null
-sudo chown -R $REAL_USER:$REAL_USER /junk &> /dev/null
-mkdir ~/dev &> /dev/null
-sudo chown -R $REAL_USER:$REAL_USER ~/dev &> /dev/null
+mkdir /junk
+mkdir /junk/logs
+sudo chown -R $REAL_USER:$REAL_USER /junk
+mkdir ~/dev
+sudo chown -R $REAL_USER:$REAL_USER ~/dev
 
 
 echo "Creating Booksmarks"
@@ -22,75 +22,75 @@ echo "file://${HOME}/dev dev" >> ~/.config/gtk-3.0/bookmarks
 
 
 echo "Adding apt sources"
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886 &> /dev/null
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 echo deb http://ppa.launchpad.net/tualatrix/ppa/ubuntu trusty main | sudo tee /etc/apt/sources.list.d/tualatrix-ubuntu-ppa-trusty.list
 echo deb http://ppa.launchpad.net/noobslab/icons/ubuntu vivid main | sudo tee /etc/apt/sources.list.d/noobslab-ubuntu-icons-vivid.list
 
 echo "Update apt-get"
-sudo apt-get update &> /dev/null
+sudo apt-get update
 
 
 echo "Installing apt applications"
-sudo apt-get -y install git ubuntu-tweak spotify-client terminator aircrack-ng p7zip-full unrar vlc browser-plugin-vlc android-tools-adb android-tools-fastboot virtualbox ultra-flat-icons libappindicator1 libindicator7 zip unzip laptop-mode-tools wine winetricks &> /dev/null
-sudo apt-get -y upgrade &> /dev/null
+sudo apt-get -y install git ubuntu-tweak spotify-client terminator aircrack-ng p7zip-full unrar vlc browser-plugin-vlc android-tools-adb android-tools-fastboot virtualbox ultra-flat-icons libappindicator1 libindicator7 zip unzip laptop-mode-tools wine winetricks
+sudo apt-get -y upgrade
 
 echo "Installing flat theme"
-mkdir ~/.themes &> /dev/null
-mkdir ~/.themes/Fantabulous &> /dev/null
-sudo chown -R $REAL_USER:$REAL_USER ~/.themes &> /dev/null
-git clone https://github.com/anmoljagetia/Flatabulous.git ~/.themes/Fantabulous --depth 0 &> /dev/null
+mkdir ~/.themes
+mkdir ~/.themes/Fantabulous
+sudo chown -R $REAL_USER:$REAL_USER ~/.themes
+git clone https://github.com/anmoljagetia/Flatabulous.git ~/.themes/Fantabulous --depth 1
 
-gsettings set org.gnome.desktop.interface gtk-theme "Fantabulous" &> /dev/null
-gsettings set org.gnome.desktop.interface icon-theme "Ultra-Flat" &> /dev/null
+gsettings set org.gnome.desktop.interface gtk-theme "Fantabulous"
+gsettings set org.gnome.desktop.interface icon-theme "Ultra-Flat"
 
 echo "Tweaks"
-gsettings set com.canonical.indicator.session show-real-name-on-panel true &> /dev/null
+gsettings set com.canonical.indicator.session show-real-name-on-panel true
 
 echo "Installing other applications"
 echo "	--> Heroku Toolbelt"
-wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh &> /dev/null
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-mkdir _temp &> /dev/null
-cd _temp &> /dev/null
+mkdir _temp
+cd _temp
 
 echo "	--> libgcrypt11 (for spotify)"
-wget --output-document=libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb https://launchpad.net/ubuntu/+archive/primary/+files/libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb &> /dev/null
-sudo dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb &> /dev/null
+wget --output-document=libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb https://launchpad.net/ubuntu/+archive/primary/+files/libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb
+sudo dpkg -i libgcrypt11_1.5.3-2ubuntu4.2_amd64.deb
 
 echo "	--> Google Chrome"
-wget --output-document=google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &> /dev/null
-sudo dpkg -i google-chrome-stable_current_amd64.deb &> /dev/null
+wget --output-document=google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 echo "	--> Atom.io"
-wget --output-document=atom.deb https://atom.io/download/deb &> /dev/null
-sudo dpkg -i atom.deb &> /dev/null
+wget --output-document=atom.deb https://atom.io/download/deb
+sudo dpkg -i atom.deb
 
 echo "	--> Sublime Text 3"
-wget --output-document=sublime-text_build-3095_amd64.deb http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3095_amd64.deb &> /dev/null
-sudo dpkg -i sublime-text_build-3095_amd64.deb &> /dev/null
+wget --output-document=sublime-text_build-3095_amd64.deb http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3095_amd64.deb
+sudo dpkg -i sublime-text_build-3095_amd64.deb
 
 echo "	--> Craking Sublime Text"
-sudo printf '\x39' | sudo dd seek=$((0xd703)) conv=notrunc bs=1 of=/opt/sublime_text/sublime_text &> /dev/null
+sudo printf '\x39' | sudo dd seek=$((0xd703)) conv=notrunc bs=1 of=/opt/sublime_text/sublime_text
 
 cd ..
-rm -rf _temp &> /dev/null
+rm -rf _temp
 
 echo "Installing and initializing NVM"
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash &> /dev/null
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 
 #this avoid to re-open the console
 export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-nvm install stable &> /dev/null
-nvm alias default stable &> /dev/null
+nvm install stable
+nvm alias default stable
 
 echo "Installing NPM global packages"
-npm install -g bower grunt-cli gulp istanbul node-inspector serve tape upnpserver-cli &> /dev/null
+npm install -g bower grunt-cli gulp istanbul node-inspector serve tape upnpserver-cli
 
 echo "Installing Atom.io packages"
-/usr/bin/apm install jade-autocompile minimap travis-ci-status file-icons git-plus minimap-highlight-selected atom-typescript atom-material-ui atom-material-syntax atom-material-syntax-light atom-jade &> /dev/null
+/usr/bin/apm install jade-autocompile minimap travis-ci-status file-icons git-plus minimap-highlight-selected atom-typescript atom-material-ui atom-material-syntax atom-material-syntax-light atom-jade
 
 #Add custom terminal configurations
 echo "" >> ~/.bashrc
