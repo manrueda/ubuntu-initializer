@@ -38,7 +38,6 @@ sudo apt-get -y upgrade
 echo "Configure Git"
 git config --global user.email "manuel.rueda.un@gmail.com"
 git config --global user.name "Manuel Rueda"
-git config --global push.default simple
 
 echo "Installing flat theme"
 mkdir ~/.themes
